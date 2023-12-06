@@ -62,9 +62,9 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
 
 
     if(keys[0])
-      fighter1.move("Left");
+      fighter1.move("LEFT");
     if(keys[1])
-      fighter1.move("Right");
+      fighter1.move("RIGHT");
     if(keys[2])
       fighter1.jump();
     if(keys[3]){
@@ -74,9 +74,9 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
       }
     }
     if(keys[4])
-      fighter2.move("Left");
+      fighter2.move("LEFT");
     if(keys[5])
-      fighter2.move("Right");
+      fighter2.move("RIGHT");
     if(keys[6])
       fighter2.jump();
     if(keys[7]){
