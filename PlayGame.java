@@ -66,7 +66,7 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
     if(keys[1])
       fighter1.move("RIGHT");
     if(keys[2])
-      fighter1.jump();
+      fighter1.move("UP");
     if(keys[3]){
       if(frames-leftLastShot>=200){
         fighter1.shoot();
@@ -78,7 +78,7 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
     if(keys[5])
       fighter2.move("RIGHT");
     if(keys[6])
-      fighter2.jump();
+      fighter2.move("UP");
     if(keys[7]){
       if(frames-rightLastShot>=200){
         fighter2.shoot();
