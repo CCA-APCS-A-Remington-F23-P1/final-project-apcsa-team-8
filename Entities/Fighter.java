@@ -20,6 +20,7 @@ class Fighter extends MovingThing {
   }
   public void draw(Graphics window) {
     window.setColor(Color.GREEN);
+    window.fillRect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
   }
   
 }
