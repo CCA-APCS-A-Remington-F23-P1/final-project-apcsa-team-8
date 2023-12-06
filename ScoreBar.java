@@ -33,17 +33,26 @@ public ScoreBar(int h1, int h2){
   player2Health = h2;
 }
 
-public int Score(){
+public int p1Score(){
 if(player1Health <= 0){
 player2Score++;
 }
-  if(player2Health <= 0){
-player1Score++;
+  else{
+    return player2Score;
   }
+  return player2Score;
 }
 
-
-
+  public int p2Score(){
+if(player2Health <= 0){
+player1Score++;
+}
+  else{
+    return player1Score;
+  }
+  return player1Score;
+}
+  
 
 
 
