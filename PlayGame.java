@@ -13,8 +13,8 @@ import java.util.Scanner;
 
 class PlayGame extends Canvas impliments KeyListener, Runable{
 
-  private Character character1;
-  private Character character2;
+  private Fighter fighter1;
+  private Fighter fighter2;
   private ScoreBar scoreBar;
   private String startMsg;
   private String gaveOverMsg;
@@ -24,9 +24,9 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
   private int leftLastShot;
   private int rightLastShot;
 
-  public PlayGame(Character c1, Character c2){
-    character1=c1;
-    character2=c2;
+  public PlayGame(Fighter f1, Fighter f2){
+    fighter1=f1;
+    fighter2=f2;
     setBackground(Color.black);
     keys = new boolean[8];
     scoreBar = new ScoreBar();
@@ -56,32 +56,32 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
     frames++;
     graphToBack.setColor(Color.WHITE);
     graphToBack.fillRect(0,0,800,600);
-    character1.draw(graphToBack);
-    character2.draw(graphToBack);
+    fighter1.draw(graphToBack);
+    fighter2.draw(graphToBack);
     scoreBar.draw(graphToBack);
 
 
     if(keys[0])
-      character1.move("Left");
+      fighter1.move("Left");
     if(keys[1])
-      character1.move("Right");
+      fighter1.move("Right");
     if(keys[2])
-      character1.jump();
+      fighter1.jump();
     if(keys[3]){
       if(frames-leftLastShot>=200){
-        character1.shoot();
+        fighter1.shoot();
         leftLastShot=frames;
       }
     }
     if(keys[4])
-      character2.move("Left");
+      fighter2.move("Left");
     if(keys[5])
-      character2.move("Right");
+      fighter2.move("Right");
     if(keys[6])
-      character2.jump();
+      fighter2.jump();
     if(keys[7]){
       if(frames-rightLastShot>=200){
-        character2.shoot();
+        fighter2.shoot();
         rightLastShot=frames;
       }
     }
