@@ -1,9 +1,11 @@
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Image;
 
 class Fighter extends MovingThing {
   private int speed;
   private int health = 100; 
+  private Image image;
   
   private final int groundY = 300;
   private float yVelocity = 0;
@@ -13,6 +15,12 @@ class Fighter extends MovingThing {
   public Fighter(int x, int y, int width, int height, int s) {
     super(x,y,width,height);
     speed = s;
+    image=null;
+  }
+  public Fighter(int x, int y, int width, int height, int s,Image i) {
+    super(x,y,width,height);
+    speed = s;
+    image=i;
   }
 
   public void move(String direction) {
