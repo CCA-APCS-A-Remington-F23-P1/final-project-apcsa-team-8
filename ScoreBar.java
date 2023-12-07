@@ -24,6 +24,8 @@ public class ScoreBar {
 public ScoreBar(){
   player1Score = 0;
   player2Score = 0;
+  player1Health = 100;
+  player2Health = 100;
 }
 
 
