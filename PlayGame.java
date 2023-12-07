@@ -54,6 +54,8 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
     Graphics graphToBack = back.createGraphics();
 
     frames++;
+    scoreBar.p1Score();
+    scoreBar.p2Score();
     graphToBack.setColor(Color.WHITE);
     graphToBack.fillRect(0,0,800,600);
     fighter1.draw(graphToBack);
