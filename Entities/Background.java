@@ -6,7 +6,7 @@ public class Background{
   private final int GROUND_Y;
   private Image i;
 
-public Background(int g, image i){
+public Background(int g, Image i){
   GROUND_Y=g;
   this.i=i;
 }
