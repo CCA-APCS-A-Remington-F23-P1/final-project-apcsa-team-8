@@ -16,16 +16,14 @@ import java.util.Random;
 public class ScoreBar {
   private int player1Score;
   private int player2Score;
-  private int player1Health;
-  private int player2Health;
+//  private int player1Health;
+//  private int player2Health;
 
 
 
 public ScoreBar(){
   player1Score = 0;
   player2Score = 0;
-  player1Health = 100;
-  player2Health = 100;
 }
 
 
@@ -45,25 +43,29 @@ public ScoreBar(){
   public int getP2Score(){
     return player2Score;
   }
-    public void draw(Graphics window)
+   
+  
+  
+  
+  public void draw(Graphics window)
    {
      window.setColor(Color.WHITE);
      window.setFont(new Font("TAHOMA",Font.BOLD,18));
      window.drawString("Player 1 Score: " + player1Score, 50, 50);
      window.drawString("Player 2 Score: " + player2Score, 50, 80);
-
+   }
 
 
      
-public ScoreBar(int h1, int h2){
+/*public ScoreBar(int h1, int h2){
   player1Score = 0;
   player2Score = 0;
   player1Health = h1;
   player2Health = h2;
 }
-  
+  */
 
-public int p1Score(){
+/*public int p1Score(){
 if(player1Health <= 0){
 player2Score++;
 }
@@ -82,7 +84,7 @@ player1Score++;
   }
   return player1Score;
 }
-  
+  */
 
 
 
