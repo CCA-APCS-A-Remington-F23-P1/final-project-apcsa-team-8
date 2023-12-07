@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 public class Background{
 
   private final int GROUND_Y;
-  private image i;
+  private Image i;
 
 public Background(int g, image i){
   GROUND_Y=g;
