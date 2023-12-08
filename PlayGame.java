@@ -61,6 +61,12 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
     fighter1.draw(graphToBack);
     fighter2.draw(graphToBack);
     scoreBar.draw(graphToBack);
+    if(frames-leftLastShot>=200){
+      fighter1.setAttacking(false);
+    }
+    if(frames-rightLastShot>=200){
+      fighter2.setAttacking(false);
+    }
 
 
     if(keys[0])
@@ -68,11 +74,13 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
     if(keys[1])
       fighter1.move("RIGHT");
     if(keys[2])
-      fighter1.move("UP");
+      if(!fighter1.getAttacking())
+        fighter1.move("UP");
     if(keys[3]){
-      if(frames-leftLastShot>=200){
+      if(!fighter1.getAttacking()){
         fighter1.shoot();
         leftLastShot=frames;
+        fighter1.setAttacking(true);
       }
     }
     if(keys[4])
@@ -80,11 +88,13 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
     if(keys[5])
       fighter2.move("RIGHT");
     if(keys[6])
-      fighter2.move("UP");
+      if(!fighter2.getAttacking())
+        fighter2.move("UP");
     if(keys[7]){
-      if(frames-rightLastShot>=200){
+      if(!fighter2.getAttacking()){
         fighter2.shoot();
         rightLastShot=frames;
+        fighter2.setAttacking(true);
       }
     }
   twoDGraph.drawImage(back, null, 0, 0);
