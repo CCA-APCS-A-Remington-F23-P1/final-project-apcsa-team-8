@@ -5,7 +5,9 @@ import java.awt.Image;
 class Fighter extends MovingThing {
   private int speed;
   private int health = 100; 
-  private Image image;
+  private Projectile p;
+  private String direction;
+  private boolean isAttacking = false;
   
   private final int groundY = 300;
   private float yVelocity = 0;
@@ -15,30 +17,27 @@ class Fighter extends MovingThing {
   public Fighter(int x, int y, int width, int height, int s) {
     super(x,y,width,height);
     speed = s;
-    image=null;
-  }
-  public Fighter(int x, int y, int width, int height, int s,Image i) {
-    super(x,y,width,height);
-    speed = s;
-    image=i;
+    p = new Project(x,y,30,30,1);
   }
 
-  public void move(String direction) {
-    if(direction.equals("LEFT")) 
-      super.setX(super.getX()-speed);
-    
-    else if(direction.equals("RIGHT")) 
-      super.setX(super.getX()+speed);
-    
-    else if( direction.equals("UP") && isOnGround ) {
-      yVelocity = 2.0f;
-      isOnGround = false;
-    }
-      
+  public int getHealth() {
+    return health;
   }
+  public void setHealth(int h) {
+    health = h;
+  }
+
+  public int getAttacking() {
+    return isAttacking;
+  }
+  public void setAttacking(int a) {
+    isAttacking = a;
+  }
+  
   public void moveAndDraw(Graphics window) {
     window.setColor(Color.GREEN);
     window.fillRect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
+    p.draw(window);
 
     if(!isOnGround) {
       yVelocity-=gravity;
@@ -49,6 +48,32 @@ class Fighter extends MovingThing {
         yVelocity = 0;
       }
     }
+
+    if(p.isActive())
+      p.move(direction);
   }
-  
+
+  public void move(String direction) {
+    if(!isAttacking) {
+      if(direction.equals("LEFT")) {
+        super.setX(super.getX()-speed);
+        this.direction = "LEFT";
+      }
+      else if(direction.equals("RIGHT")) {
+        super.setX(super.getX()+speed);
+        this.direction = "RIGHT";
+      }
+      else if( direction.equals("UP") && isOnGround ) {
+        yVelocity = 2.0f;
+        isOnGround = false;
+      }
+    }
+  }
+
+  public void shoot() {
+    if(!isAttacking) {
+      p.setActive(true);
+      p.setDirection(direction);
+    }
+  }
 }
