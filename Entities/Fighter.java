@@ -13,10 +13,12 @@ class Fighter extends MovingThing {
   private float yVelocity = 0;
   private boolean isOnGround = true;
   private float gravity = 0.5f;
+  private String name;
   
-  public Fighter(int x, int y, int width, int height, int s) {
+  public Fighter(int x, int y, int width, int height, int s, String n) {
     super(x,y,width,height);
     speed = s;
+    name=n;
     p = new Project(x,y,30,30,1);
   }
 
@@ -32,6 +34,13 @@ class Fighter extends MovingThing {
   }
   public void setAttacking(int a) {
     isAttacking = a;
+  }
+  public String getName(){
+    return name;
+  }
+
+  public void setName(String n){
+    name=n;
   }
   
   public void moveAndDraw(Graphics window) {
