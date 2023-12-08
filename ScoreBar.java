@@ -26,6 +26,13 @@ public ScoreBar(){
   player2Score = 0;
 }
 
+  public void p1Score(){
+player1Score++;
+  }
+
+  public void p2Score(){
+player2Score++;
+  }
 
   public void setP1Score(int s)
   {
