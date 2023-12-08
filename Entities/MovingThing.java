@@ -85,4 +85,14 @@ public abstract class MovingThing implements Moveable
   {
     return getX() + " " + getY() + " " + getWidth() + " " + getHeight();
   }
+
+  public boolean didCollide(MovingThing other) {
+    if (getX() < other.getX() + other.getWidth() 
+        && getX() + getWidth() > other.getX() 
+        && getY() < other.getY() + other.getHeight() 
+        && getY() + getHeight() > other.getY()) {
+      return true;
+    }
+    return false;
+  }
 }
