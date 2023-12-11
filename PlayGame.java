@@ -60,6 +60,7 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
     scoreBar.p2Score();
     graphToBack.setColor(Color.WHITE);
     graphToBack.fillRect(0,0,800,600);
+    graphToBack.draw(backdrop);
     fighter1.draw(graphToBack);
     fighter2.draw(graphToBack);
     scoreBar.draw(graphToBack);
