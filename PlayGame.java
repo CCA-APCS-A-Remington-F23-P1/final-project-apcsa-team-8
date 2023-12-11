@@ -23,8 +23,9 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
   private int frames;
   private int leftLastShot;
   private int rightLastShot;
+  private Background backdrop;
 
-  public PlayGame(Fighter f1, Fighter f2){
+  public PlayGame(Fighter f1, Fighter f2, Background b;){
     fighter1=f1;
     fighter2=f2;
     setBackground(Color.black);
@@ -35,6 +36,7 @@ class PlayGame extends Canvas impliments KeyListener, Runable{
     frames=0;
     leftLastShot=Integer.MIN_VALUE;
     rightLastShot=Integer.MIN_VALUE;
+    backdrop=b;
     
     this.addKeyListener(this);
     new Thread(this).start();
@@ -190,5 +192,7 @@ public void keyTyped(KeyEvent e)
     {
     }
   }
+  public Background getBackground(){
+    return backdrop;}
 }
 
