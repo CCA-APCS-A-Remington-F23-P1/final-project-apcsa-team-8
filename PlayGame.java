@@ -19,7 +19,7 @@ class PlayGame extends Canvas implements KeyListener{
   private String startMsg;
   private String gaveOverMsg;
   private boolean[] keys;
-  private BuffedImage back;
+  private BufferedImage back;
   private int frames;
   private int leftLastShot;
   private int rightLastShot;
