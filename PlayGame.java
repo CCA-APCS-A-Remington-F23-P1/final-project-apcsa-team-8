@@ -25,7 +25,7 @@ class PlayGame extends Canvas implements KeyListener, Runable{
   private int rightLastShot;
   private Background backdrop;
 
-  public PlayGame(Fighter f1, Fighter f2, Background b;){
+  public PlayGame(Fighter f1, Fighter f2, Background b){
     fighter1=f1;
     fighter2=f2;
     setBackground(Color.black);
