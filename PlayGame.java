@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class PlayGame extends Canvas impliments KeyListener, Runable{
+class PlayGame extends Canvas implements KeyListener, Runable{
 
   private Fighter fighter1;
   private Fighter fighter2;
