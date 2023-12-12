@@ -42,8 +42,8 @@ class Fighter extends MovingThing {
   public void setName(String n){
     name=n;
   }
-  
-  public void moveAndDraw(Graphics window) {
+  @Override
+  public void draw(Graphics window) {
     window.setColor(Color.GREEN);
     window.fillRect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
     p.draw(window);
