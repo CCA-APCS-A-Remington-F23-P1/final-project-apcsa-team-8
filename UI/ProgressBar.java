@@ -1,3 +1,4 @@
+import java.awt.Color;
 public class ProgressBar extends Block{
 
   private Block maxHealth;
