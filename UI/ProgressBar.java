@@ -1,4 +1,7 @@
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Canvas;
 public class ProgressBar extends Block{
 
   private Block maxHealth;
