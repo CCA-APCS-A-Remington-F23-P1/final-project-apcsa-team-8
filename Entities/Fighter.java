@@ -51,7 +51,7 @@ class Fighter extends MovingThing {
     if(!isOnGround) {
       yVelocity-=gravity;
       super.setX(int)( super.getX() + yVelocity );
-      if(super.getY() >= groundY()) {
+      if(super.getY() >= groundY) {
         isOnGround = true;
         super.setY(groundY());
         yVelocity = 0;
