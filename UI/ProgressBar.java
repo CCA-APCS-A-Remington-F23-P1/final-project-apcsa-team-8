@@ -35,7 +35,7 @@ public class ProgressBar extends Block{
     max = s;
   }
 
-  public void update(Graphics windows){
+  public void update(Graphics window){
     maxHealth.draw(window);
     currentHealth.draw(window);
   }
