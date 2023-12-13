@@ -19,7 +19,7 @@ class Fighter extends MovingThing {
     super(x,y,width,height);
     speed = s;
     name=n;
-    p = new Project(x,y,30,30,1);
+    p = new Projectile(x,y,30,30,1);
   }
 
   public int getHealth() {
