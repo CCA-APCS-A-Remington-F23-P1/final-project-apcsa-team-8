@@ -32,7 +32,7 @@ class Fighter extends MovingThing {
   public boolean getAttacking() {
     return isAttacking;
   }
-  public void setAttacking(int a) {
+  public void setAttacking(boolean a) {
     isAttacking = a;
   }
   public String getName(){
