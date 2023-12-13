@@ -17,7 +17,7 @@ class PlayGame extends Canvas implements KeyListener{
   private Fighter fighter2;
   private ScoreBar scoreBar;
   private String startMsg;
-  private String gaveOverMsg;
+  private String gameOverMsg;
   private boolean[] keys;
   private BufferedImage back;
   private int frames;
