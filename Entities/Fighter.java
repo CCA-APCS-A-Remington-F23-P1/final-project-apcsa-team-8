@@ -28,6 +28,13 @@ class Fighter extends MovingThing {
   public void setHealth(int h) {
     health = h;
   }
+   public void setSpeed(int s) {
+    speed=s;
+  }
+  public int getSpeed(){
+    return speed;
+  }
+
 
   public boolean getAttacking() {
     return isAttacking;
