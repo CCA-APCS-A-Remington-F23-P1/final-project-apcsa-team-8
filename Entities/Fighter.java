@@ -29,7 +29,7 @@ class Fighter extends MovingThing {
     health = h;
   }
 
-  public int getAttacking() {
+  public boolean getAttacking() {
     return isAttacking;
   }
   public void setAttacking(int a) {
