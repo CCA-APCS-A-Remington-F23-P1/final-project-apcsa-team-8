@@ -9,6 +9,13 @@ class Projectile extends MovingThing {
     speed = s;
   }
 
+  public void setSpeed(int s){
+    speed=s;
+  }
+  public int getSpeed(){
+    return speed;
+  }
+
   public void move(String direction) {
     if(direction.equals("LEFT")) {
       super.setX(super.getX()-speed);
