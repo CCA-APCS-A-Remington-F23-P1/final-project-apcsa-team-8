@@ -3,9 +3,9 @@ import java.awt.Graphics;
 
 public class Punch extends MovingThing {
   private int speed;
-  private boolean isActive;
   private String direction;
   private int distanceTraveled;
+  private boolean isActive;
   
   public Punch(int x, int y, int width, int height, int s) {
     super(x, y, width, height);
@@ -18,8 +18,12 @@ public class Punch extends MovingThing {
   public void setDirection(String d) {
     direction = d;
   }
+
+  public boolean isActive(){
+    return isActive;
+  }
   
-  public void move() {
+  public void move(String direction) {
     if (direction.equals("LEFT")) {
       super.setX(super.getX() - speed);
     } else if (direction.equals("RIGHT")) {
@@ -30,9 +34,18 @@ public class Punch extends MovingThing {
       isActive = false;
     }
   }
-  
-  public boolean isActive() {
-    return isActive;
+
+  public void setSpeed( int s ){
+    speed = s;
+  }
+  public int getSpeed(){
+    return speed;
+  }
+  public boolean didCollide(Fighter m) {
+    if(getX() < m.getX() + m.getWidth() && getX() + getWidth() > m.getX() && getY() < m.getY() + m.getHeight() && getY() + getHeight() > m.getY()) {
+      return true;
+    }
+    return false;
   }
   
   public void draw(Graphics window) {
