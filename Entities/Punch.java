@@ -22,7 +22,7 @@ public class Punch extends MovingThing {
   public boolean isActive(){
     return isActive;
   }
-  
+  @Override
   public void move(String direction) {
     if (direction.equals("LEFT")) {
       super.setX(super.getX() - speed);
@@ -41,12 +41,13 @@ public class Punch extends MovingThing {
   public int getSpeed(){
     return speed;
   }
-  public boolean didCollide(Fighter m) {
+ /* public boolean didCollide(Fighter m) {
     if(getX() < m.getX() + m.getWidth() && getX() + getWidth() > m.getX() && getY() < m.getY() + m.getHeight() && getY() + getHeight() > m.getY()) {
       return true;
     }
     return false;
   }
+  */
   
   public void draw(Graphics window) {
     if (isActive) {
