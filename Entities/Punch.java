@@ -50,9 +50,9 @@ public class Punch extends MovingThing {
   */
   
   public void draw(Graphics window) {
-    if (isActive) {
+    
       window.setColor(Color.RED);
       window.fillRect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
-    }
+    
   }
 }
