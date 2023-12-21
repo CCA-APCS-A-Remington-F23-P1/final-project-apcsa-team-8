@@ -69,9 +69,11 @@ public ScoreBar(){
 }
   */
 
-public int p1Score(){
+public int p1Score(PlayGame pg){
 if(player1Health <= 0){
 player2Score++;
+  player1Health = 100;
+  pg.resetStuff(1);
 }
   else{
     return player2Score;
@@ -79,9 +81,11 @@ player2Score++;
   return player2Score;
 }
 
-  public int p2Score(){
+  public int p2Score(PlayGame pg){
 if(player2Health <= 0){
 player1Score++;
+  player2Health = 100;
+  pg.resetStuff(2);
 }
   else{
     return player1Score;
@@ -96,12 +100,6 @@ public void p2Hurt(int n){
   player2Health-=n;
 }
   
-
-
-
-
-
 }
-
 
 
