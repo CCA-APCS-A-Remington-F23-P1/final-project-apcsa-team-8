@@ -25,13 +25,14 @@ public class ProgressBar extends Block{
   public int getCurrent(){
     return current;
   }
-  public int setCurrent(int s){
+  public void setCurrent(int s){
     current = s;
+    currentHealth.setWidth((int)(maxHealth.getWidth()*(current/max)));
   }
   public int getMax(){
     return max;
   }
-  public int setMax(int s){
+  public void setMax(int s){
     max = s;
   }
 
