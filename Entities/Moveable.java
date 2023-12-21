@@ -15,3 +15,4 @@ public interface Moveable
   public void setSpeed( int s );
   public int getSpeed();
 }
+
